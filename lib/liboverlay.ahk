@@ -52,12 +52,19 @@ Overlay_UniformCtrlWidths() {
 	}
 }
 
+Overlay_GUIOn() {
+	Gui, 1: Show, NoActivate
+}
+
+Overlay_GUIOff() {
+	Gui, 1: Destroy
+}
 
 ; show the final gui with both text controls (set some reasonable default values for size)
 Overlay_ShowGUI(showTime:=1000) {
-	Gui, 1: Show, NoActivate
+	Overlay_GUIOn()
 	Sleep %showTime%
-	Gui, 1: Destroy
+	Overlay_GUIOff()
 }
 
 ; From here down are the dual-GUI functions.

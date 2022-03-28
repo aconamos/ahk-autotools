@@ -41,3 +41,22 @@ F6::
     Else
         Send, {w down}
 Return
+
+RAlt::
+    OverlayToggle := !OverlayToggle
+
+	; Setup overlay window
+	WinID := Overlay_CreateGUI()
+
+	CtrlID := Overlay_CreateRow(72, "I have aids")
+
+	; Make GUI control widths equal so all text can be centered
+	Overlay_UniformCtrlWidths()
+
+	; Show overlay window
+	If (OverlayToggle) {
+        Overlay_GUIOn()
+    } Else {
+        Overlay_GUIOff()
+    }
+Return
